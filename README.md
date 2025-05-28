@@ -1,15 +1,17 @@
-# CUDA Vector Addition
+# CUDA Programming Experiments
 
-This repository contains CUDA implementations of vector addition, demonstrating parallel computing concepts and GPU acceleration.
+This repository is a collection of CUDA programming experiments and explorations, where we investigate different parallel computing concepts, optimization techniques, and GPU acceleration patterns. Each experiment is designed to explore specific aspects of CUDA programming and GPU computing.
 
 ## Project Structure
 
 ```
 src/
-├── 1_vector_addition/
-│   ├── vector_add.cu      # Main implementation
+├── 1_vector_addition/     # Exploring basic parallel patterns
+│   ├── vector_add.cu      # Implementation
 │   ├── CMakeLists.txt     # Build configuration
-│   └── README.md          # Implementation details
+│   └── README.md          # Experiment details
+├── [future experiments]/  # More CUDA explorations
+└── common/               # Shared utilities and helpers
 ```
 
 ## Requirements
@@ -37,76 +39,90 @@ cmake ..
 make
 ```
 
-## Running the Vector Addition
+## Current Experiments
 
-The vector addition program demonstrates the performance difference between CPU and GPU implementations:
+### 1. Vector Addition
+An exploration of basic parallel patterns:
+- Investigating thread organization strategies
+- Experimenting with memory access patterns
+- Comparing CPU vs GPU performance characteristics
+- Analyzing memory transfer overhead
 
-```bash
-./vector_add
-```
+[More experiments to be added...]
 
-The program will:
-- Generate random input vectors
-- Perform vector addition on both CPU and GPU
-- Compare results for correctness
-- Display timing information and speedup
+## Experimental Features
 
-## Implementation Details
+### Performance Analysis
+- Profiling GPU execution times
+- Measuring CPU-GPU data transfer overhead
+- Investigating memory bandwidth utilization
+- Exploring different thread/block configurations
 
-### CPU Implementation
-- Sequential vector addition using a simple for loop
-- Used as reference implementation for correctness verification
+### Memory Experiments
+- Testing various memory access patterns
+- Investigating shared memory usage
+- Exploring unified memory capabilities
+- Analyzing memory coalescing effects
 
-### GPU Implementation
-- Parallel vector addition using CUDA
-- Each thread handles one element
-- Block size of 256 threads
-- Automatic grid size calculation based on input size
+### Optimization Studies
+- Thread organization experiments
+- Block size optimization
+- Memory access pattern analysis
+- Synchronization overhead investigation
 
-### Performance Features
-- CUDA events for accurate GPU timing
-- Memory management optimization
-- Error checking for CUDA operations
-- Result verification with tolerance checking
+## Development Approach
 
-## Testing
+### Experimentation Methodology
+- Start with baseline implementation
+- Identify performance bottlenecks
+- Test optimization hypotheses
+- Document findings and insights
 
-The implementation includes comprehensive testing:
-- Various vector sizes (1 to 10M elements)
-- Edge cases (zero vectors)
-- Performance comparison
-- Result verification
+### Analysis Tools
+- NVIDIA Nsight Systems for system-wide analysis
+- NVIDIA Nsight Compute for kernel profiling
+- Custom timing and measurement utilities
+- Performance visualization tools
 
-## Performance Considerations
-
-The GPU implementation shows significant speedup over CPU for large vectors due to:
-- Parallel processing of elements
-- Efficient memory access patterns
-- Optimized thread organization
-- Minimal synchronization requirements
-
-## Error Handling
-
-The implementation includes robust error handling:
-- CUDA operation error checking
-- Memory allocation verification
-- Result validation
-- Graceful cleanup of resources
+### Documentation
+- Hypothesis and approach
+- Experimental setup
+- Results and observations
+- Conclusions and learnings
 
 ## Contributing
 
+We welcome contributions to this experimental project! Feel free to:
 1. Fork the repository
 2. Create a feature branch
-3. Commit your changes
+3. Add your experiments
 4. Push to the branch
 5. Create a Pull Request
+
+### Experiment Guidelines
+- Clear hypothesis and objectives
+- Reproducible setup
+- Comprehensive measurements
+- Detailed analysis
+- Clear conclusions
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Acknowledgments
+## Resources
 
-- NVIDIA CUDA Toolkit documentation
-- CUDA Programming Guide
-- CUDA Best Practices Guide
+### Learning Resources
+- [CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/)
+- [CUDA Best Practices Guide](https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/)
+- [NVIDIA Developer Forums](https://forums.developer.nvidia.com/)
+
+### Analysis Tools
+- [NVIDIA Nsight Systems](https://developer.nvidia.com/nsight-systems)
+- [NVIDIA Nsight Compute](https://developer.nvidia.com/nsight-compute)
+- [CUDA-GDB](https://docs.nvidia.com/cuda/cuda-gdb/)
+
+### Community
+- [NVIDIA Developer Forums](https://forums.developer.nvidia.com/)
+- [Stack Overflow CUDA Tag](https://stackoverflow.com/questions/tagged/cuda)
+- [NVIDIA Developer Blog](https://developer.nvidia.com/blog/)
